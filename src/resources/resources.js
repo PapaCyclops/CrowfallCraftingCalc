@@ -23,6 +23,11 @@ export const animalBlood = createResource(base, "Animal Blood");
 export const animalBone = createResource(base, "Animal Bone");
 //</editor-fold>
 
+//<editor-fold desc "Alchemy Craft">
+const alchemyCraft = "Alchemy Craft";
+export const powderedStone = createResource(alchemyCraft,"Powdered Stone",[[stone,8]]);
+//</editor-fold>
+
 //<editor-fold desc="Purchased">
 export const waterFlask = createResource("Purchase", "Water Flask", [[gold, 20/*todo update price*/]]);
 //</editor-fold>
@@ -35,184 +40,41 @@ export const gravel = createResource(geomancyComponent, "Gravel", [[stone, 20]])
 export const soil = createResource(geomancyComponent, "Soil", [[gravel, 8], [mulch, 8], [oreConcentrate, 8]])
 //</editor-fold>
 
+//<editor-fold desc = "Stonemasonry Components">
+export const stonemasonryComponent = "Stonemasonry Component";
+export const brick = createResource(stonemasonryComponent, "Brick",[[stone,75],[etherealDust, 5]]);
+export const carpentryNail = createResource(stonemasonryComponent, "Carpentry Nail",[[ore,60],[etherealDust,5]]);
+export const diamondCuttingBlade = createResource(stonemasonryComponent, "Diamond Cutting Blade",[[ore,6],[cuttingGrit,2]]);
+export const floorTiles = createResource(stonemasonryComponent,"Floor Tiles",[[stone,75],[etherealDust,5]]);
+export const grindingWheel = createResource(stonemasonryComponent,"Grinding Wheel",[[stone,12]]);
+export const polishingPaste = createResource(stonemasonryComponent,"Polishing Paste",[[waterFlask,2][powderedStone,8]]);
+export const qualityAssuranceControlKit = createResource(stonemasonryComponent, "Quality Assurance Control Kit",[[ore,25],[wood,25],[stone,25],[hide,25],[etherealDust,5]]);
+export const woodShingles = createResource(stonemasonryComponent,"Wood Shingles",[[wood,80][carpentryNail,2]]);
+export const woodStakes = createResource(stonemasonryComponent,"Wood Stakes",[[wood,75][etherealDust,5]]);
+//</editor-fold>
 
+//<editor-fold desc " Architecture Components">
+const architecturalComponents = "Architectural Components";
+export const frame = createResource(architecturalComponents, "Frame",[[wood,80],[carpentryNail,2]]);
+export const architecturalArches = createResource(architecturalComponents, "Architectural Arches",[[brick,2][frame,2],[carpentryNail,1]]);
+export const wallInsulation = createResource(architecturalComponents,"Wall Insulation", [[hide,10],[mulch,4]]);
+export const architecturalWall = createResource(architecturalComponents,"Architectural Wall", [[brick,2], [frame,4],[carpentryNail,1],[wallInsulation,2]]);
+export const foundationSegment = createResource(architecturalComponents,"Foundation Segment", [[brick,4],[gravel,2]]);
+export const roofSegment = createResource(architecturalComponents, "Roof Segment", [[woodShingles,4],[carpentryNail,4]]);
+export const wallSection = createResource(architecturalComponents, "Wall Section", [[woodStakes,8],[frame,2]]);
+//</editor-fold>
+
+//<editor-fold desc "Attatchables">
+const attatchable = "Attachables";
+export const buttressAndFin = createResource(attatchable,"Buttress and Fin",[[foundationSegment,1],[floorTiles,2],[[etherealDust,5],[qualityAssuranceControlKit,1]]]);
+export const craftingDeck = createResource(attatchable,[[architecturalArches,1],[foundationSegment,1],[floorTiles,1],[etherealDust,5],[qualityAssuranceControlKit,1]]);
+export const hangingBanner = createResource(attatchable,"Hanging Banner",[[woodStakes,2],[foundationSegment,2],[etherealDust,5],[qualityAssuranceControlKit,1]]);
+export const merlon = createResource(attatchable,"Merlon",[[foundationSegment,3],[floorTiles,1],[etherealDust,5],[qualityAssuranceControlKit,1]]);
+export const rampart = createResource(attatchable,"Rampart",[[foundationSegment,4],[floorTiles,3],[etherealDust,5],[qualityAssuranceControlKit,1]]);
+export const standingBanner = createResource(attatchable, "Standing Banner",[[foundationSegment,2],[woodStakes,2],[etherealDust,5],[qualityAssuranceControlKit,1]]);
+//</editor-fold>
 export const craftedResources = [
-    //StoneMasonry Components
-    {
-        name: "Brick",
-        ingredients: [
-            {ingredient: "Stone", amount: 75},
-            {ingredient: "Ethereal Dust", amount: 5}
-        ]
-    },
-    {
-        name: "Carpentry Nail",
-        ingredients: [
-            {ingredient: "Ore", amount: 60},
-            {ingredient: "Ethereal Dust", amount: 5}
-        ]
-    },
-    {
-        name: "Diamond Cutting Blade",
-        ingredients: [
-            {ingredient: "Ore", amount: 6},
-            {ingredient: "Cutting Grit", amount: 2}
-        ]
-    },
-    {
-        name: "Floor Tiles",
-        ingredients: [
-            {ingredient: "Stone", amount: 75},
-            {ingredient: "Ethereal Dust", amount: 5}
-        ]
-    },
-    {
-        name: "Grinding Wheel",
-        ingredients: [
-            {ingredient: "Stone", amount: 12},
-        ]
-    },
-    {
-        name: "Polishing Paste",
-        ingredients: [
-            {ingredient: "Water Flask", amount: 2},
-            {ingredient: "Powdered Stone", amount: 8},
-        ]
-    },
-    {
-        name: "Quality Assurance Control Kit",
-        ingredients: [
-            {ingredient: "Ore", amount: 25},
-            {ingredient: "Wood", amount: 25},
-            {ingredient: "Stone", amount: 25},
-            {ingredient: "Hide", amount: 25},
-            {ingredient: "Ethereal Dust", amount: 5},
 
-        ]
-    },
-    {
-        name: "Wood Shingles",
-        ingredients: [
-            {ingredient: "Wood", amount: 80},
-            {ingredient: "Carpentry Nail", amount: 2}
-        ]
-    },
-    {
-        name: "Wood Stakes",
-        ingredients: [
-            {ingredient: "Wood", amount: 75},
-            {ingredient: "Ethereal Dust", amount: 5}
-        ]
-    },
-    // Architecture Components
-    {
-        name: "Architectural Arches",
-        ingredients: [
-            {ingredient: "Brick", amount: 2},
-            {ingredient: "Frame", amount: 2},
-            {ingredient: "Carpentry Nail", amount: 1}
-        ]
-    },
-    {
-        name: "Architectural Wall",
-        ingredients: [
-            {ingredient: "Brick", amount: 2},
-            {ingredient: "Frame", amount: 4},
-            {ingredient: "Carpentry Nail", amount: 1},
-            {ingredient: "Wall Insulation", amount: 2}
-        ]
-    },
-    {
-        name: "Foundation Segment",
-        ingredients: [
-            {ingredient: "Brick", amount: 4},
-            {ingredient: "Gravel", amount: 2}
-        ]
-    },
-    {
-        name: "Frame",
-        ingredients: [
-            {ingredient: "Wood", amount: 80},
-            {ingredient: "Carpentry Nail", amount: 2}
-        ]
-    },
-    {
-        name: "Roof Segment",
-        ingredients: [
-            {ingredient: "Wood Shingles", amount: 4},
-            {ingredient: "Carpentry Nail", amount: 4}
-        ]
-    },
-    {
-        name: "Wall Insulation",
-        ingredients: [
-            {ingredient: "Hide", amount: 10},
-            {ingredient: "Mulch", amount: 4}
-        ]
-    },
-    {
-        name: "Wall Section",
-        ingredients: [
-            {ingredient: "Stakes", amount: 8},
-            {ingredient: "Frame", amount: 2}
-        ]
-    },
-    //Attatchables
-    {
-        name: "Buttress and Fin",
-        ingredients: [
-            {ingredient: "Foundation Segment", amount: 1},
-            {ingredient: "Floor Tiles", amount: 2},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
-    {
-        name: "Crafting Deck",
-        ingredients: [
-            {ingredient: "Architectural Arches", amount: 1},
-            {ingredient: "Foundation Segment", amount: 1},
-            {ingredient: "Floor Tiles", amount: 1},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
-    {
-        name: "Hanging Banner",
-        ingredients: [
-            {ingredient: "Stakes", amount: 2},
-            {ingredient: "Foundation Segment", amount: 2},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
-    {
-        name: "Merlon",
-        ingredients: [
-            {ingredient: "Foundation Segment", amount: 3},
-            {ingredient: "Floor Tiles", amount: 1},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
-    {
-        name: "Rampart",
-        ingredients: [
-            {ingredient: "Foundation Segment", amount: 4},
-            {ingredient: "Floor Tiles", amount: 3},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
-    {
-        name: "Standing Banner",
-        ingredients: [
-            {ingredient: "Foundation Segment", amount: 2},
-            {ingredient: "Stakes", amount: 2},
-            {ingredient: "Ethereal Dust", amount: 5},
-            {ingredient: "Quality Assurance Control Kit", amount: 1}
-        ]
-    },
     //Buildings
     {
         name: "Cottage",
