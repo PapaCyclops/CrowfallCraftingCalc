@@ -8,6 +8,15 @@ const ResourceRow = ({name, ingredients}) => {
                 {name}
             </td>
             <td>
+                <input type="number"/>
+            </td>
+            <td>
+                <input type="number"/>
+            </td>
+            <td>
+                <input type="number" disabled/>
+            </td>
+            <td>
                 {ingredientsArray && <table>
                     <tbody>
                     {ingredientsArray.map(ingredient =>

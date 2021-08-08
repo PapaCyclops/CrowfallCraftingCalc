@@ -13,9 +13,16 @@ export default function ResourceTable() {
             <tbody>
             {Object.entries(resourcesByGroup).map(([group, groupResources]) => <>
                 <tr>
-                    <th colSpan={2}>
+                    <th colSpan={5}>
                         {group}
                     </th>
+                </tr>
+                <tr>
+                    <th>Item</th>
+                    <th>Have</th>
+                    <th>Want</th>
+                    <th>Need</th>
+                    <th>Ingredients</th>
                 </tr>
                 {groupResources.map(resource => <ResourceRow {...resource}/>)}
             </>)}
