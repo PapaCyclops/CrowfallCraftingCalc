@@ -1,4 +1,4 @@
-import {resources} from "./resources/resources";
+import {Resource, resources} from "./resources/resources";
 import ResourceRow from "./ResourceRow";
 
 export default function ResourceTable() {
@@ -6,7 +6,7 @@ export default function ResourceTable() {
         map[resource.group] = map[resource.group] || [];
         map[resource.group].push(resource);
         return map;
-    }, {})
+    }, {} as Record<string, Resource[]>)
     return <>
         <h2>Items</h2>
         <table style={{margin: "0 auto"}}>
