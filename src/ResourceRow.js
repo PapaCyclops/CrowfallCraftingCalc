@@ -12,7 +12,15 @@ const ResourceRow = ({name, ingredients}) => {
                     <tbody>
                     {ingredientsArray.map(ingredient =>
                         <>
-                            <tr>{ingredient.ingredient.name} {ingredient.amount}</tr>
+                            <tr>
+                                <td>
+                                    {ingredient.ingredient.name}
+                                </td>
+                                <td>
+                                    {ingredient.amount}
+                                </td>
+
+                            </tr>
                             {ingredient.ingredients && <ResourceRow {...ingredient}/>}
                         </>
                     )}
