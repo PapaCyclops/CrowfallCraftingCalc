@@ -1,14 +1,12 @@
 import {Heading, Table, Td, Text, Th, Thead, Tr} from "@chakra-ui/react";
+import {FC} from "react";
 import {Resource} from "../../resources/resources";
 import {getCraftingSteps} from "../utils/craftingUtils";
 
-export function CraftingRequirements({
-  resource,
-  amount
-}: {
+const CraftingRequirements: FC<{
   resource: Resource;
   amount: number;
-}) {
+}> = ({resource, amount}) => {
   const steps = getCraftingSteps(resource, amount);
   return (
     <section>
@@ -29,7 +27,7 @@ export function CraftingRequirements({
           {Array.from(steps.entries())
             .sort(([, amountA], [, amountB]) => amountB - amountA)
             .map(([resource, amount]) => (
-              <Tr>
+              <Tr key={resource.name}>
                 <Td>{resource.name}</Td>
                 <Td isNumeric>{amount.toLocaleString()}</Td>
               </Tr>
@@ -38,4 +36,6 @@ export function CraftingRequirements({
       </Table>
     </section>
   );
-}
+};
+
+export default CraftingRequirements;
