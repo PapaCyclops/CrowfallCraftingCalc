@@ -1,16 +1,6 @@
-import React from "react";
-import {
-  ChakraProvider,
-  Box,
-  VStack,
-  Grid,
-  theme,
-  Heading
-} from "@chakra-ui/react";
+import {ChakraProvider, Box, VStack, Grid, theme} from "@chakra-ui/react";
 import {ColorModeSwitcher} from "./ColorModeSwitcher";
-import ResourceTable from "./ResourceTable";
-import {CraftingRequirements} from "./CraftingRequirements";
-import {woodlandHillsParcel} from "./resources/resources";
+import CraftingCalculator from "./CraftingCalculator/CraftingCalculator";
 
 export default function App() {
   return (
@@ -19,11 +9,7 @@ export default function App() {
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-            <Heading as="h1" size="2xl">
-              Crowfall Crafting Calc
-            </Heading>
-            <CraftingRequirements resource={woodlandHillsParcel} amount={5} />
-            <ResourceTable />
+            <CraftingCalculator />
           </VStack>
         </Grid>
       </Box>

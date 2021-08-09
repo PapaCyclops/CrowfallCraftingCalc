@@ -1,6 +1,6 @@
-import {getCraftingSteps} from "./craftingUtils";
-import {Resource} from "./resources/resources";
-import {Heading, Text} from "@chakra-ui/react";
+import {Heading, Table, Td, Text, Th, Thead, Tr} from "@chakra-ui/react";
+import {Resource} from "../../resources/resources";
+import {getCraftingSteps} from "../utils/craftingUtils";
 
 export function CraftingRequirements({
   resource,
@@ -15,27 +15,27 @@ export function CraftingRequirements({
       <Heading as="h2" size="xl">
         Crafting Requirements
       </Heading>
-      <Text>
+      <Text size="lg">
         {resource.name} - {amount}
       </Text>
-      <table style={{margin: "0 auto"}}>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Item</Th>
+            <Th>Amount</Th>
+          </Tr>
+        </Thead>
         <tbody>
           {Array.from(steps.entries())
             .sort(([, amountA], [, amountB]) => amountB - amountA)
             .map(([resource, amount]) => (
-              <tr>
-                <td>{resource.name}</td>
-                <td>{amount}</td>
-              </tr>
+              <Tr>
+                <Td>{resource.name}</Td>
+                <Td isNumeric>{amount.toLocaleString()}</Td>
+              </Tr>
             ))}
         </tbody>
-      </table>
+      </Table>
     </section>
   );
 }

@@ -1,4 +1,3 @@
-import {getCraftingSteps} from "./craftingUtils";
 import {
   gravel,
   mulch,
@@ -7,7 +6,8 @@ import {
   soil,
   stone,
   wood
-} from "./resources/resources";
+} from "../../resources/resources";
+import {getCraftingSteps} from "./craftingUtils";
 
 describe("getCraftingSteps", () => {
   test("ore", () => {

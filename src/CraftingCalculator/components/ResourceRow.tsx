@@ -1,21 +1,27 @@
-import React from "react";
-import {Resource} from "./resources/resources";
+import {NumberInput, NumberInputField, Td, Tr} from "@chakra-ui/react";
+import {Resource} from "../../resources/resources";
 
 const ResourceRow = ({name /*, ingredients*/}: Resource) => {
   // const ingredientsArray = ingredients && Array.from(ingredients, ([ingredient, amount]) => ({ingredient, amount}))
   return (
-    <tr>
-      <td>{name}</td>
-      <td>
-        <input type="number" />
-      </td>
-      <td>
-        <input type="number" />
-      </td>
-      <td>
-        <input type="number" disabled />
-      </td>
-      <td>
+    <Tr>
+      <Td>{name}</Td>
+      <Td>
+        <NumberInput min={0}>
+          <NumberInputField />
+        </NumberInput>
+      </Td>
+      <Td>
+        <NumberInput min={0}>
+          <NumberInputField />
+        </NumberInput>
+      </Td>
+      <Td>
+        <NumberInput min={0} isDisabled>
+          <NumberInputField />
+        </NumberInput>
+      </Td>
+      <Td>
         {/*{ingredientsArray && <table>*/}
         {/*    <tbody>*/}
         {/*    {ingredientsArray.map(({ingredient, amount}) =>*/}
@@ -34,8 +40,8 @@ const ResourceRow = ({name /*, ingredients*/}: Resource) => {
         {/*    )}*/}
         {/*    </tbody>*/}
         {/*</table>}*/}
-      </td>
-    </tr>
+      </Td>
+    </Tr>
   );
 };
 

@@ -1,4 +1,5 @@
-import {Resource, resources} from "./resources/resources";
+import {Table, Tbody, Th, Tr} from "@chakra-ui/react";
+import {Resource, resources} from "../../resources/resources";
 import ResourceRow from "./ResourceRow";
 
 export default function ResourceTable() {
@@ -10,27 +11,27 @@ export default function ResourceTable() {
   return (
     <>
       <h2>Items</h2>
-      <table style={{margin: "0 auto"}}>
-        <tbody>
+      <Table size="sm">
+        <Tbody>
           {Object.entries(resourcesByGroup).map(([group, groupResources]) => (
             <>
-              <tr>
-                <th colSpan={5}>{group}</th>
-              </tr>
-              <tr>
-                <th>Item</th>
-                <th>Have</th>
-                <th>Want</th>
-                <th>Need</th>
-                <th>Ingredients</th>
-              </tr>
+              <Tr>
+                <Th colSpan={5}>{group}</Th>
+              </Tr>
+              <Tr>
+                <Th>Item</Th>
+                <Th>Have</Th>
+                <Th>Want</Th>
+                <Th>Need</Th>
+                <Th>Ingredients</Th>
+              </Tr>
               {groupResources.map((resource) => (
                 <ResourceRow {...resource} />
               ))}
             </>
           ))}
-        </tbody>
-      </table>
+        </Tbody>
+      </Table>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import {Resource} from "./resources/resources";
+import {Resource} from "../../resources/resources";
 
 export function getCraftingSteps(resource: Resource, amount: number = 1) {
   const map: Map<Resource, number> = new Map();
