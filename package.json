@@ -2,6 +2,7 @@
   "name": "crowfall-crafting-calc",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zayvionjones.github.io/CrowfallCraftingCalc",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
