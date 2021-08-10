@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.84344ad1.chunk.js",
-    "main.js.map": "/static/js/main.84344ad1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.438f36c6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.438f36c6.js.map",
-    "static/js/2.1ccbbc4c.chunk.js": "/static/js/2.1ccbbc4c.chunk.js",
-    "static/js/2.1ccbbc4c.chunk.js.map": "/static/js/2.1ccbbc4c.chunk.js.map",
-    "static/js/3.0892631e.chunk.js": "/static/js/3.0892631e.chunk.js",
-    "static/js/3.0892631e.chunk.js.map": "/static/js/3.0892631e.chunk.js.map",
-    "index.html": "/index.html",
-    "static/js/2.1ccbbc4c.chunk.js.LICENSE.txt": "/static/js/2.1ccbbc4c.chunk.js.LICENSE.txt"
+    "main.js": "/CrowfallCraftingCalc/static/js/main.dcb70802.chunk.js",
+    "main.js.map": "/CrowfallCraftingCalc/static/js/main.dcb70802.chunk.js.map",
+    "runtime-main.js": "/CrowfallCraftingCalc/static/js/runtime-main.a2f451bb.js",
+    "runtime-main.js.map": "/CrowfallCraftingCalc/static/js/runtime-main.a2f451bb.js.map",
+    "static/js/2.1ccbbc4c.chunk.js": "/CrowfallCraftingCalc/static/js/2.1ccbbc4c.chunk.js",
+    "static/js/2.1ccbbc4c.chunk.js.map": "/CrowfallCraftingCalc/static/js/2.1ccbbc4c.chunk.js.map",
+    "static/js/3.0892631e.chunk.js": "/CrowfallCraftingCalc/static/js/3.0892631e.chunk.js",
+    "static/js/3.0892631e.chunk.js.map": "/CrowfallCraftingCalc/static/js/3.0892631e.chunk.js.map",
+    "index.html": "/CrowfallCraftingCalc/index.html",
+    "static/js/2.1ccbbc4c.chunk.js.LICENSE.txt": "/CrowfallCraftingCalc/static/js/2.1ccbbc4c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.438f36c6.js",
+    "static/js/runtime-main.a2f451bb.js",
     "static/js/2.1ccbbc4c.chunk.js",
-    "static/js/main.84344ad1.chunk.js"
+    "static/js/main.dcb70802.chunk.js"
   ]
 }
