@@ -6,6 +6,7 @@ import {
   NumberInputProps
 } from "@chakra-ui/react";
 import {FC} from "react";
+import useResourceData from "../../hooks/useResourceData";
 import {Resource} from "../../resources/resources";
 
 const ResourceNumberInput: FC<NumberInputProps> = (props) => (
@@ -14,19 +15,33 @@ const ResourceNumberInput: FC<NumberInputProps> = (props) => (
   </NumberInput>
 );
 
-const ResourceRow: FC<Resource> = ({name /*, ingredients*/}) => {
+const ResourceRow: FC<Resource> = ({
+  name
+  /*, ingredients*/
+}) => {
+  const [{have, want, need}, onChange] = useResourceData(name);
   // const ingredientsArray = ingredients && Array.from(ingredients, ([ingredient, amount]) => ({ingredient, amount}))
   return (
     <Tr>
       <Td>{name}</Td>
       <Td>
-        <ResourceNumberInput />
+        <ResourceNumberInput
+          value={have}
+          onChange={(valueAsString, valueAsNumber) =>
+            onChange({have: valueAsNumber || 0})
+          }
+        />
       </Td>
       <Td>
-        <ResourceNumberInput />
+        <ResourceNumberInput
+          value={want}
+          onChange={(valueAsString, valueAsNumber) =>
+            onChange({want: valueAsNumber || 0})
+          }
+        />
       </Td>
       <Td>
-        <ResourceNumberInput isDisabled />
+        <ResourceNumberInput value={need} isDisabled />
       </Td>
       <Td>
         {/*{ingredientsArray && <table>*/}

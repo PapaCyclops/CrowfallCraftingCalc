@@ -9,6 +9,7 @@ const ResourceTable: FC = () => {
     map[resource.group].push(resource);
     return map;
   }, {} as Record<string, Resource[]>);
+
   return (
     <section>
       <Heading as="h2" size="xl">
